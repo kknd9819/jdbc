@@ -29,11 +29,15 @@ public class ShiroConfiguration {
         //设置安全管理器
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         shiroFilterFactoryBean.setLoginUrl("/login");
-        shiroFilterFactoryBean.setSuccessUrl("/index");
-        shiroFilterFactoryBean.setUnauthorizedUrl("/common/unauthorized");
+        shiroFilterFactoryBean.setSuccessUrl("/admin/common/main.jhtml");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/admin/common/unauthorized.jhtml");
         //拦截器
         Map<String,String> filterChainDefinitionMap = new LinkedHashMap<String,String>();
-        filterChainDefinitionMap.put("/**","anon");
+        filterChainDefinitionMap.put("/admin/","anon");
+        filterChainDefinitionMap.put("/login","authc");
+        filterChainDefinitionMap.put("/logout","logout");
+        filterChainDefinitionMap.put("/admin/common/captchaImage.jhtml","anon");
+        filterChainDefinitionMap.put("/order/printReport/**","anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         Map<String,Filter> filters = new HashMap<String,Filter>();
