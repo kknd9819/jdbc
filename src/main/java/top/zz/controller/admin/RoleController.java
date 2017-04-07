@@ -1,18 +1,19 @@
 package top.zz.controller.admin;
 
 import cn.shengyuan.basic.model.Message;
+
 import cn.shengyuan.basic.model.Page;
-import cn.shengyuan.yun.admin.system.service.MenuService;
-import cn.shengyuan.yun.admin.system.service.RoleService;
-import cn.shengyuan.yun.admin.web.Pageable;
-import cn.shengyuan.yun.admin.web.controller.BaseController;
-import cn.shengyuan.yun.core.admin.entity.Role;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import top.zz.controller.base.BaseController;
+import top.zz.model.admin.Role;
+import top.zz.service.system.MenuService;
+import top.zz.service.system.RoleService;
+import top.zz.util.Pageable;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;

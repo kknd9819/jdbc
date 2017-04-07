@@ -5,7 +5,8 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import top.zz.service.RSAService;
+import top.zz.service.system.RSAService;
+
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

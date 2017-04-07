@@ -1,10 +1,10 @@
 package top.zz.controller.admin;
 
-import cn.shengyuan.yun.admin.web.controller.BaseController;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import top.zz.controller.base.BaseController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -2,17 +2,18 @@ package top.zz.controller.admin;
 
 import cn.shengyuan.basic.model.Message;
 import cn.shengyuan.tools.util.StringUtil;
-import cn.shengyuan.yun.admin.system.service.MenuService;
-import cn.shengyuan.yun.admin.system.service.MenuValueService;
-import cn.shengyuan.yun.admin.web.controller.BaseController;
-import cn.shengyuan.yun.core.admin.entity.Menu;
-import cn.shengyuan.yun.core.admin.entity.MenuValue;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import top.zz.controller.base.BaseController;
+import top.zz.model.admin.Menu;
+import top.zz.model.admin.MenuValue;
+import top.zz.service.system.MenuService;
+import top.zz.service.system.MenuValueService;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class MenuValueController extends BaseController {
 	 * @return String
 	 */
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(MenuValue menuValue,RedirectAttributes redirectAttributes) {
+	public String save(MenuValue menuValue, RedirectAttributes redirectAttributes) {
 		if (menuValueService.nameExists(menuValue.getId(), menuValue.getvName())) {
 			return ERROR_VIEW;
 		}
@@ -90,7 +91,7 @@ public class MenuValueController extends BaseController {
 
 	/**
 	 * 编辑保存
-	 * @param MenuValue
+	 * @param menuValue
 	 * @param redirectAttributes
 	 * @return String
 	 */

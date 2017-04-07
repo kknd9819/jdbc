@@ -5,9 +5,9 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
-import top.zz.model.User;
-import top.zz.service.RSAService;
-import top.zz.service.UserService;
+import top.zz.model.admin.Admin;
+import top.zz.service.system.AdminService;
+import top.zz.service.system.RSAService;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletRequest;
@@ -51,8 +51,8 @@ public class AuthenticationFilter extends FormAuthenticationFilter {
 	@Resource(name = "rsaServiceImpl")
 	private RSAService rsaService;
 	
-	@Resource(name = "userServiceImpl")
-	private UserService userService;
+	@Resource(name = "adminServiceImpl")
+	private AdminService adminService;
 
 	@Override
 	protected org.apache.shiro.authc.AuthenticationToken createToken(ServletRequest servletRequest, ServletResponse servletResponse) {
@@ -94,8 +94,8 @@ public class AuthenticationFilter extends FormAuthenticationFilter {
 		}
 		session.stop();
 		session = subject.getSession();
-		User user = userService.findByUsername(subject.getPrincipal().toString());
-		session.setAttribute(DEFAULT_MID_PARAM, user.getUid());
+		Admin admin = adminService.findByUsername(subject.getPrincipal().toString());
+		session.setAttribute(DEFAULT_MID_PARAM, admin.getmId());
 		for (Entry<Object, Object> entry : attributes.entrySet()) {
 			session.setAttribute(entry.getKey(), entry.getValue());
 		}

@@ -2,19 +2,20 @@ package top.zz.controller.admin;
 
 import cn.shengyuan.basic.model.Message;
 import cn.shengyuan.tools.util.StringUtil;
-import cn.shengyuan.yun.admin.system.service.MenuService;
-import cn.shengyuan.yun.admin.system.service.MenuValueService;
-import cn.shengyuan.yun.admin.web.Pageable;
-import cn.shengyuan.yun.admin.web.controller.BaseController;
-import cn.shengyuan.yun.core.admin.entity.Menu;
-import cn.shengyuan.yun.core.admin.entity.MenuValue;
-import cn.shengyuan.yun.core.admin.vo.MenuMenuValue;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import top.zz.controller.base.BaseController;
+import top.zz.model.admin.Menu;
+import top.zz.model.admin.MenuValue;
+import top.zz.model.admin.vo.MenuMenuValue;
+import top.zz.service.system.MenuService;
+import top.zz.service.system.MenuValueService;
+import top.zz.util.Pageable;
 
 import javax.annotation.Resource;
 import java.util.Date;

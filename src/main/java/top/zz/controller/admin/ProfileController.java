@@ -1,8 +1,6 @@
 package top.zz.controller.admin;
 
-import cn.shengyuan.yun.admin.system.service.AdminService;
-import cn.shengyuan.yun.admin.web.controller.BaseController;
-import cn.shengyuan.yun.core.admin.entity.Admin;
+
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
@@ -11,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import top.zz.controller.base.BaseController;
+import top.zz.model.admin.Admin;
+import top.zz.service.system.AdminService;
 
 import javax.annotation.Resource;
 
